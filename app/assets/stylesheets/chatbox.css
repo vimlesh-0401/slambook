@@ -106,8 +106,9 @@ a:focus {
 }
 .chat_box_wrapper.chat_box_small.chat_box_active {
     height: 270px;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 248px;
+    background-color: #FFFFFF;
 }
 aside {
     /* background-attachment: fixed;
@@ -178,9 +179,9 @@ img {
     width: 0;
 }*/
 .chat_box.chat_box_colors_a .chat_message_wrapper ul.chat_message > li {
-    background: #FCFBF6 none repeat scroll 0 0;
     color: #000000;
 }
+
 .open-btn {
     border: 2px solid #189d0e;
     border-radius: 32px;
@@ -197,12 +198,22 @@ img {
     clear: both;
     color: #212121;
     display: block;
-    float: left;
     font-size: 12px;
     padding: 4px 4px !important;
     position: relative;
     word-break: break-all;
 }
+
+.chat_box .chat_message_wrapper.chat_message_right ul.chat_message > li {
+    background: #8EAB8C none repeat scroll 0 0;
+    float: right;
+}
+
+.chat_box .chat_message_wrapper.chat_message_left ul.chat_message > li {
+    background: #EDEDED none repeat scroll 0 0;
+    float: left;
+}
+
 .chat_box .chat_message_wrapper ul.chat_message, .chat_box .chat_message_wrapper ul.chat_message > li {
     list-style: outside none none;
     padding: 0;
@@ -259,13 +270,13 @@ img {
 }
 .chat_box .chat_message_wrapper ul.chat_message > li {
     background: #ededed none repeat scroll 0 0;
-    border-radius: 12px;
+    border-radius: 5px;
     clear: both;
     color: #212121;
     display: block;
     float: left;
-    font-size: 13px;
-    padding: 8px 16px;
+    font-size: 12px;
+    padding: 4px 4px;
     position: relative;
 }
 .gurdeep-chat-box {

@@ -38,7 +38,7 @@ body.push('        <div class="chat_box touchscroll chat_box_colors_a">');
 body.push('        </div>');
 body.push('    </div>');
 left_msg = [];
-left_msg.push('            <div class="chat_message_wrapper">');
+left_msg.push('            <div class="chat_message_wrapper chat_message_left">');
 left_msg.push('                <div class="chat_user_avatar">');
 left_msg.push('                    <a href="" target="_blank" >');
 left_msg.push('                        <img alt="" title=""  src="" class="md-user-image">');
@@ -142,7 +142,8 @@ chat.footer.push('    </div>');
                         if(_gchatbox.handleKey(e)){
                             _gchatbox.render(this);
                         }
-                    })
+                    });
+
                 $layout.append($body);
                 $layout.append($footer);
                 $layout.css('right', margin);
@@ -150,6 +151,7 @@ chat.footer.push('    </div>');
                 $layout.attr('g-chatId',id);
                 $(ele).attr('g-chatId',id);
                 $('body').append($layout);
+                $footer.find('.uk-input-group > textarea[g-control="g-ctrl-message"]').focus()
             },
             handleKey:function(e){
                 e = (!e) ? window.event : e;
@@ -170,18 +172,35 @@ chat.footer.push('    </div>');
                 })
             },
             render: function(input){
-                $msg = $(chat.body.left.join(''));
-                $msg.find('.chat_message')
-                    .html('<li><p>'+$(input).val()+'</p></li>');
+                lasttime = $(input).attr('g-msg-time');
+                current = Date.now();
+                $(input).attr('g-msg-time', current);
+                if((((current - lasttime)/1000) > 30) || typeof(lasttime) === 'undefined' || lasttime === null){
+                    $msg = $(chat.body.right.join(''));
+                    $msg.find('.chat_message')
+                        .html('<li><p>'+$(input).val()+'<span class="chat_message_time"></span></p></li>');
 
-                $msg.find('.chat_user_avatar a> img.md-user-image')
-                    .attr('src', img);
-                $msg.find('.chat_user_avatar a')
-                    .attr('src', 'web.facebook.com/vimlesh.0401');
-
+                    $msg.find('.chat_user_avatar a> img.md-user-image')
+                        .attr('src', img);
+                    $msg.find('.chat_user_avatar a')
+                        .attr('src', 'web.facebook.com/vimlesh.0401');
+                    $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
+                        .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a')
+                        .append($msg)
+                }else{
+                    $msg = $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
+                        .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a .chat_message_wrapper').last();
+                    $msg.find('.chat_message')
+                        .append('<li><p>'+$(input).val()+'</p></li>');
+                }
+                
                 $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
-                    .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a')
-                    .append($msg)
+                        .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a')
+                        .animate({
+                            scrollBottom: $(input).offset().top
+                        }, 2000);
+
+                $(input).val('').focus();
             }
         }
 

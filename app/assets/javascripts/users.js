@@ -30,7 +30,7 @@ var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b
       },
       after: function(){
         // Unregister or register triggers
-        $friends_cont.height($friends_cont.parent().height()-90);
+        $friends_cont.height($friends_cont.parent().height()-85);
         $friends_cont.css('overflow-y', 'auto');
       },
       insert: function(user){
