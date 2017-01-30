@@ -51,11 +51,11 @@ a:focus {
     padding-right: 3px;
     margin-top: -4px;
 }
-.gurdeepoushan .dropdown-menu {
+.slambook .dropdown-menu {
     padding: 6px;
     border-radius: 7px !important;
 }
-.gurdeepoushan .dropdown-menu li a span {
+.slambook .dropdown-menu li a span {
     border: 1px solid;
     border-radius: 50px;
     display: list-item;
@@ -66,12 +66,12 @@ a:focus {
     text-align: center;
     width: 40px;
 }
-.gurdeepoushan .dropdown-menu li {
+.slambook .dropdown-menu li {
     float: left;
     text-align: center;
     width: 33.33333333%;
 }
-.gurdeepoushan .dropdown-menu li a {
+.slambook .dropdown-menu li a {
     border-radius: 7px;
     font-family: oswald;
     padding: 3px;
@@ -80,7 +80,7 @@ a:focus {
     font-size: 11px !important;
     color: #8EAB8C;
 }
-.gurdeepoushan .dropdown-menu li a:hover {
+.slambook .dropdown-menu li a:hover {
     background: #8EAB8C none repeat scroll 0 0 !important;
     color: #fff;
 }

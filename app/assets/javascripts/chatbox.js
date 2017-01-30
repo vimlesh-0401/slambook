@@ -15,7 +15,7 @@ chat.header.push('        </div>');
 chat.header.push('        <div class="popup-head-right pull-right">');
 chat.header.push('            <button class="chat-header-button" type="button"><i class="glyphicon glyphicon-facetime-video"></i></button>');
 chat.header.push('            <button class="chat-header-button" type="button"><i class="glyphicon glyphicon-earphone"></i></button>');
-chat.header.push('            <div class="btn-group gurdeepoushan">');
+chat.header.push('            <div class="btn-group slambook">');
 chat.header.push('                <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">');
 chat.header.push('                    <i class="glyphicon glyphicon-paperclip"></i> ');
 chat.header.push('                </button>');
