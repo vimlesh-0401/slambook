@@ -1,0 +1,11 @@
+hi:
+  hello: "नमस्ते"
+  message:
+    welcome: "अतुल्य भारत में आपका स्वागत है"
+
+  header:
+    home: "मुख्य पृष्ठ"
+    user:
+      profile: "रूपरेखा"
+      work: "कार्य"
+      setting: "व्यवस्था"

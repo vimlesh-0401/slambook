@@ -1,0 +1,400 @@
+@media (min-width: 880px){
+  .g-navbar .navbar-collapse.in .navbar-form input[type='text']{
+    width: 300px;
+  }
+}
+@media (max-width: 767px){
+  .g-navbar .navbar-collapse{
+    width: 50%;
+    overflow-y: visible;
+    border: 1px solid white;
+    right: 0;
+    z-index: 1885;
+    position: absolute;
+    background-color: #8EAB8C;
+  }
+  .navbar-collapse.in{
+    overflow-y: visible;
+    border: 1px solid white;
+    right: 0;
+    z-index: 1885;
+    position: absolute;
+    background-color: #8EAB8C;
+  }
+  .container-fluid > .navbar-collapse{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .g-navbar .navbar-collapse.in .navbar-form{
+    padding: 10px 5px;
+  }
+  .g-navbar .navbar-collapse.in .navbar-form input[type='text']{
+    width: 100%;
+  }
+}
+body{
+  background-color: #e9ebee !important;
+}
+.g-navbar{
+  background-color: #8EAB8C !important;
+}
+.dropdown-menu{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.dropdown-menu > li > a{
+  padding: 10px 20px !important;
+}
+
+.dropdown-menu .divider{
+  margin: 0px !important;
+}
+
+.g-navbar .navbar-brand {
+  color: #FFFFFF !important;
+}
+.g-navbar .navbar-nav > li > a{
+  color: #FFFFFF !important;
+}
+.g-navbar .navbar-nav > li > a:hover{
+  color: #161A1E !important;
+}
+.g-navbar .navbar-nav > .active > a{
+  background-color: #477144 !important;
+}
+.g-navbar .navbar-nav > .open > a, .g-navbar .navbar-nav > .open > a:hover, .g-navbar .navbar-nav > .open > a:focus{
+  background-color: #477144 !important;
+}
+.g-navbar .navbar-form input[type='text']{
+  width: 450px;
+  line-height: 1.75699;
+  padding: 2px 10px;
+}
+section{
+  padding: 10px 20px;
+  margin: 10px 20px;
+  background-color: inherit;
+  margin-top: 50px;
+}
+
+.g-panel .panel-heading{
+  background-color: inherit;
+}
+
+.g-panel .panel-body{
+  background-color: #FFFFFF;
+}
+
+.g-panel .panel-body textarea, .g-panel .panel-footer input{
+  width: 100%;
+  border-width: 1px;
+  border-style: ridge;
+  border-color: #DDDDDD;
+  padding: 10px 10px;
+}
+
+.g-panel .panel-body textarea{
+  resize: vertical;
+  padding-left: 55px;
+  border-color: #FFFFFF;
+}
+.g-panel .g-post{
+  padding: 0px;
+}
+.g-panel .g-post .g-controls,.g-panel .g-post .g-comments, .g-panel .g-post .g-post-body{
+  padding: 5px 10px;
+}
+.g-panel .g-post .g-controls,.g-panel .g-post .g-comments{
+  border-top: 1px solid transparent;
+  border-color: #DDDDDD;
+}
+a> small{
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+.g-post .g-controls a{
+  font-weight: 600;
+  color: #7f7f7f;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+}
+.g-post .g-controls a i{
+  font-weight: inherit;
+}
+
+.g-post .g-controls a i:hover{
+  text-decoration: underline;
+}
+.g-post .g-controls a[g-liked='true']{
+  color: #4080ff;
+}
+.g-panel .panel-footer a.btn{
+  display: inline-block;
+  border-radius: 0px;
+}
+
+.g-panel .panel-footer .vk-g2-sp{
+  display: inline-block;
+  padding: 5px 0px;
+}
+
+.g-panel .g-post .g-comments{
+  background-color: #F5F5F5;
+}
+
+.g-panel .g-post .g-comments .media .media-body input.comment-box,.g-panel .g-post .g-comments .media .media-body input.reply-box{
+  width: 100%;
+  border-width: 1px;
+  border-style: ridge;
+  border-color: #DDDDDD;
+  font-size: 12px;
+  padding: 3px 5px;
+}
+
+.g-panel .g-post .g-comments .media .media-body input:focus{
+  outline-offset: 0px;
+  outline-style: none;
+  outline-width: thin;
+  outline-color: #F2F2F2;
+}
+.g-panel .panel-footer{
+  border-bottom: 1px solid transparent;
+}
+.g-panel .panel-footer input{
+  font-size: 12px;
+}
+.g-panel .panel-footer input:focus, .g-panel .panel-body textarea:focus{
+  outline-offset: 0px;
+  outline-style: none;
+  outline-width: thin;
+  outline-color: #F2F2F2;
+}
+.g-panel .panel-body .media{
+  background-color: inherit;
+}
+.g-panel .panel-body .media .media-body .media-heading{
+  font-size: 12px;
+  font-weight: 600;
+}
+.g-panel .panel-body .media .media-body p{
+  font-size: 12px;
+  margin: 0px;
+}
+.g-panel .panel-body .media .media-left .media-object{
+  width: 20px;
+}
+
+.g-panel .panel-body .media .media-body .media-left .media-object{
+  width: 15px;
+}
+
+.g-panel .panel-body .media .media-body small.control a{
+  padding: 0px 5px;
+}
+.g-panel .g-body .image, .g-panel .panel-heading .image{
+  position: absolute;
+  vertical-align: middle;
+  padding: 11px 5px;
+  border: 1px dotted transparent;
+  border-color: #E3E2E2;
+}
+.g-panel .panel-heading .image{
+  left: 20px;
+  border:0px;
+}
+.g-panel .panel-heading .image img{
+  width: 30px;
+}
+
+.g-panel .panel-heading.posts{
+  padding-top: 0px;
+}
+.g-panel .panel-heading h5{
+  display: inline-block;
+  line-height: 0.9;
+  padding-left: 35px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
+.g-panel .panel-heading h5 span{
+  display: block;
+  padding: 2px;
+}
+.g-panel .panel-heading h5 span small{
+  font-size: 10px;
+}
+.g-panel .panel-heading .g2-vk{
+  display: inline-block;
+  width: 0px;
+  padding: 19px 0px;
+}
+.g-panel .g-body{
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.g-panel .g-body div[data-g-tg='user-tag']{
+  padding: 2px 15px;
+  width: auto;
+}
+.g-panel .g-body div[data-g-tg='user-tag'] a{
+  margin: 0px 10px;
+}
+.g-panel .g-body .image img{
+  width: 40px;
+}
+
+.g-panel .g-comments>.media{
+  border-bottom: 1px dotted transparent;
+  border-color: #E3E2E2;
+}
+.g-panel .g-comments>.media:last-child{
+  border-bottom: none;
+}
+.g-comments .media-body .reply-comments{
+  border-left: 1px solid transparent;
+  border-color: #DDDDDD;
+  padding-left: 5px;
+  box-shadow: 2px 2px 1px gray;
+}
+
+div[g-controls="g2-vk-post-like"]{
+  background-color: #F5F5F5;
+  display: none;
+  padding: 5px 15px;
+  border-top: 1px solid transparent;
+  border-color: #E3E2E2;
+  cursor: pointer;
+}
+
+div[g-controls="g2-vk-post-like"] span{
+  margin: 0px 5px;
+}
+div[g-controls="g2-vk-post-like"][g-visible="true"]{
+ display: block; 
+}
+
+div[g-controls="g2-vk-post-like"] span[g-content="text"]:hover > i.fa> em{
+  text-decoration: underline;
+}
+
+div[g-controls="g2-vk-post-like"] span[g-content="text"] > span{
+  position: absolute;
+  display: none;
+  height: auto;
+  width: auto;
+  padding: 5px 10px;
+  z-index: 100;
+  background-color: #5F5F5F;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+div[g-controls="g2-vk-post-like"] span[g-content="text"]:hover > span{
+  display: block;
+}
+
+div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 45%;
+  margin-left: -8px;
+  width: 0; height: 0;
+  border-bottom: 8px solid #5F5F5F;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.g-friends-list{
+  width: 200px;
+  height: 100%;
+  border-left: 1px solid transparent;
+  border-color: #E3E2E2;
+}
+.g-bottom-fixed{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.g-friends-list .g-friends-container{
+  background-color: #FFFFFF;
+  display: block;
+  height: 100%;
+}
+
+.g-friends-list .g-friends-container .g-controls{
+  position: absolute;
+  bottom: 2px;
+  display: block;
+  background-color: #FFFFFF;
+  padding: 0px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-color: #E3E2E2;
+}
+
+.g-friends-list .g-friends-container .g-controls .g-control{
+  width: 100%;
+  height: 100%;
+  padding: 2px 10px;
+}
+
+.g-friends-list .g-friends-container .g-friends{
+  border: 1px solid transparent;
+  padding-top: 55px;
+}
+
+.g-friends-list .g-friends-container .g-friends .g-friend{
+  padding: 5px 10px;
+  margin: 0px;
+  border-bottom: 1px solid transparent;
+  border-color: #EEFEEA;
+}
+.g-friends-list .g-friends-container .g-friends .g-friend span{
+  margin-left: 5px;
+}
+
+.g-friends-list .g-friends-container .g-friends .g-friend span i.fa{
+  font-size: 10px;
+  color: #337AF9;
+}
+.g-friends-list .g-friends-container .g-friends .g-friend span.image-o{
+  float: right;
+}
+.g-friends-list .g-friends-container .g-friends .g-friend span.image{
+  visibility: hidden;
+}
+
+.g-friends-list .g-friends-container .g-friends .g-friend span a{
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.g-friends-list .g-friends-container .g-friends .g-friend span a:hover{
+  text-decoration: none;
+}
+.chat-boxes{
+  position: fixed;
+  bottom: 0px;
+  height: 5px;
+  width: 79%;
+  border: 1px solid #DDDDDD;
+}
+.chat-g2x{
+  align-content: flex-end;
+  text-align: right;
+
+}
+
+.chat-g2-box{
+  height: 300px;
+  border: 1px solid #E2E2E2;
+  position: absolute;
+  background-color: #FFFFFF;
+  bottom: 0;
+  width: 200px;
+}

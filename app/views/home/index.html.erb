@@ -1,0 +1,41 @@
+<section id="public-post-section">
+  <div class="row">
+    <div class="col-xs-8 col-md-6 col-xs-offset-1 col-md-offset-2" id="user-posts">
+      <div class="panel panel-default g-panel">
+        <div class="panel-heading">
+          <%=current_user.name%>
+        </div>
+        <div class="panel-body g-body">
+          <div class="image"><%= image_tag "users.png" %></div>
+          <textarea placeholder="What's in your mind?"></textarea>
+          <div data-g-tg="user-tag">
+            <a href="javascript:void(0)"><i class="fa fa-camera-retro"></i></a>
+            <a href="javascript:void(0)"><i class="fa fa-smile-o"></i></a>
+          </div>
+        </div>
+        <div class="panel-footer" style="padding: 5px 15px;">
+          <div class="vk-g2-sp"></div>
+          <span>
+            <a href="javascript:void(0);" class="btn btn-default create-post">Post</a>
+            <a href="javascript:void(0);" class="btn btn-default cancel-post">Cancel</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-md-6 col-xs-offset-1 col-md-offset-2" id="user-posts-area">
+      
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $('#user-posts').Post();
+  $('#user-posts-area').Posts();
+  setTimeout(function(){
+    $(".g-friends-list .g-friends-container").Friends();
+  }, 1000)
+  
+</script>

@@ -1,0 +1,25 @@
+<section>
+  <div class="row">
+    <div class="col-xs-8 col-md-6 col-xs-offset-2 col-md-offset-3">
+      <div class="panel panel-default g-panel">
+        <div class="panel-header"><h4>Edit Profile</h4></div>
+        <div class="panel-body">
+          <%= form_for @user, class: "form-horizontal" do |f| %>
+            <div class="form-group">
+              <label for="exampleSelect1">Language</label>
+              <%= collection_select(:user, :lang, @language, :last, :first, {prompt: "Select language", required: true}, class: "form-control", id: "exampleSelect1") %>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                Check me out
+              </label>
+            </div>
+            <%= f.submit "Update", class: "btn btn-small btn-primary" %>
+            <%= link_to "Cancel", root_path(), class: "btn btn-small btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
