@@ -321,7 +321,7 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
 }
 
 .g-friends-list .g-friends-container{
-  background-color: #FFFFFF;
+  background-color: #F5F5F5;
   display: block;
   height: 100%;
 }
@@ -330,7 +330,7 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
   position: absolute;
   bottom: 0px;
   display: block;
-  background-color: #FFFFFF;
+  background-color: inherit;
   padding: 0px;
   width: 100%;
   border: 1px solid transparent;
@@ -342,6 +342,7 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
   height: 100%;
   padding: 4px;
   font-size: 10px;
+  border: 1px solid transparent;
 }
 
 .g-friends-list .g-friends-container .g-friends{
@@ -350,39 +351,40 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
 }
 
 .g-friends-list .g-friends-container .g-friends .g-friend{
-  padding: 5px 10px;
   margin: 0px;
   border-bottom: 1px solid transparent;
   border-color: #EEFEEA;
-  color: #000000;
+  color: #454545;
 }
-.g-friends-list .g-friends-container .g-friends .g-friend span{
+.g-friends-list .g-friends-container .g-friends .g-friend a{
   color: inherit;
-  margin-left: 5px;
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
 }
 
-.g-friends-list .g-friends-container .g-friends .g-friend span i.fa{
+.g-friends-list .g-friends-container .g-friends .g-friend a span i.fa{
   font-size: 10px;
   color: #337AF9;
 }
-.g-friends-list .g-friends-container .g-friends .g-friend span.image-o{
+.g-friends-list .g-friends-container .g-friends .g-friend a span.image-o{
   float: right;
 }
-.g-friends-list .g-friends-container .g-friends .g-friend span.image{
+.g-friends-list .g-friends-container .g-friends .g-friend a span.image{
   visibility: hidden;
 }
 
-.g-friends-list .g-friends-container .g-friends .g-friend span a{
+.g-friends-list .g-friends-container .g-friends .g-friend a span{
   font-size: 12px;
   text-decoration: none;
   color: inherit !important;
 }
 
-.g-friends-list .g-friends-container .g-friends .g-friend span a:hover{
+.g-friends-list .g-friends-container .g-friends .g-friend  a:hover span{
   text-decoration: none;
 }
 
-.g-friends-list .g-friends-container .g-friends .g-friend:hover{
+.g-friends-list .g-friends-container .g-friends .g-friend a:hover{
   background-color: #CBCDCE;
   color: #FFFFFF;
 }

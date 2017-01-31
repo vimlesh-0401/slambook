@@ -35,18 +35,17 @@ var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b
       },
       insert: function(user){
         arr = [];
-        arr.push('<div class="g-friend" g-control="g2-vk-friend"><span class="name">');
-        arr.push('</span>');
-        arr.push(' <span class="image-o image"><i class="fa fa-circle"></i></span></div>');
+        arr.push('<div class="g-friend" g-control="g2-vk-friend"></div>');
         $friend = $(arr.join(''));
         $('<a href="javascript:void(0);">')
           .attr('g-friend-id', user.id)
           .attr('g-control', 'g2-vk-clk')
-          .html(user.name)
+          .html('<span class="name">'+user.name+'</span>')
+          .append('<span class="image-o image"><i class="fa fa-circle"></i></span>')
           .on('click', function(){
             _gFriends.chatbox(this);
           })
-          .appendTo($friend.find('span.name'));
+          .appendTo($friend);
 
         $friends_cont.append($friend);
       },

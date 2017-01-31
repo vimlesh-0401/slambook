@@ -24,6 +24,10 @@ a:focus {
     margin-left: 5px;
     min-width: 125px;
 }
+
+.popup-head-left.pull-left h1 span:last-child{
+    margin-left: 10px;
+}
 .popup-head-left a small {
     display: table;
     font-size: 9px;

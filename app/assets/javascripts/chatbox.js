@@ -117,13 +117,13 @@ chat.footer.push('    </div>');
                 $layout = $(chat.layout.join(''));
                 $header = $(chat.header.join(''))
                 $header.find('.popup-head-left a')
-                    .attr('title', $(ele).html() )
+                    .attr('title', $(ele).find('span.name').html() )
                     .attr('href', 'https://web.facebook.com/vimlesh.0401');
 
                 $header.find('.popup-head-left a img.md-user-image')
                     .attr('src',img)
-                    .attr('alt',$(ele).html() )
-                    .attr('title', $(ele).html());
+                    .attr('alt',$(ele).find('span.name').html() )
+                    .attr('title', $(ele).find('span.name').html());
 
                 $header.find('.popup-head-left a h1')
                     .html($(ele).html() );
@@ -135,12 +135,17 @@ chat.footer.push('    </div>');
                     });
                 $layout.append($header);
                 $body = $(chat.body.main.join(''));
+                $body.attr('g-load-msg', function(){
+                    $.get('/messages',{receiver_id: $(ele).attr('g-friend-id')}, function(data){
+                        console.log()
+                    })
+                })
                 $footer = $(chat.footer.join(''));
                 $footer.find('.uk-input-group > textarea[g-control="g-ctrl-message"]')
                     .attr('g-friend-id', $(ele).attr('g-friend-id'))
                     .on('keydown', function(e){
                         if(_gchatbox.handleKey(e)){
-                            _gchatbox.render(this);
+                            _gchatbox.save(this);
                         }
                     });
 
@@ -171,14 +176,23 @@ chat.footer.push('    </div>');
                     $(this).css('right', pos);
                 })
             },
-            render: function(input){
+
+            save: function(input){
+                var id = $(input).attr('g-friend-id');
+                var content = $(input).val();
+                $.post('/messages',{message:{receiver_id: id, content: content}}, function(data){
+                    _gchatbox.render(input, data)
+                });
+            },
+            render: function(input, data){
+                console.log(data)
                 lasttime = $(input).attr('g-msg-time');
                 current = Date.now();
                 $(input).attr('g-msg-time', current);
                 if((((current - lasttime)/1000) > 30) || typeof(lasttime) === 'undefined' || lasttime === null){
                     $msg = $(chat.body.right.join(''));
                     $msg.find('.chat_message')
-                        .html('<li><p>'+$(input).val()+'<span class="chat_message_time"></span></p></li>');
+                        .html('<li><p>'+data.content+'<span class="chat_message_time"></span></p></li>');
 
                     $msg.find('.chat_user_avatar a> img.md-user-image')
                         .attr('src', img);
@@ -193,13 +207,14 @@ chat.footer.push('    </div>');
                     $msg.find('.chat_message')
                         .append('<li><p>'+$(input).val()+'</p></li>');
                 }
-                
+                $panel = $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
+                    .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a');
+                    
                 $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
-                        .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a')
-                        .animate({
-                            scrollBottom: $(input).offset().top
-                        }, 2000);
-
+                    .find('.chat_box_wrapper.chat_box_small.chat_box_active')
+                    .animate({
+                        scrollTop: Math.abs($panel.offset().top) + $panel.height()
+                    }, 200);
                 $(input).val('').focus();
             }
         }

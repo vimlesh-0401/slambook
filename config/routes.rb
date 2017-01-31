@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :likes
   resources :posts
+  resources :messages, only: [:create, :index]
 
   get 'profile', to: 'users#profile'
   

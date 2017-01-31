@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :posts
   has_many :comments
+  has_many :messages
   has_and_belongs_to_many :friends, 
               class_name: "User", 
               join_table: :friendship, 
