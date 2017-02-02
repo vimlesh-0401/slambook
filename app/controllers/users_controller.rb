@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :find_user, only: [:update]
+  before_action :find_user, only: [:update]
 
   def index
     respond_to do |format|

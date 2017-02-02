@@ -347,7 +347,7 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
 
 .g-friends-list .g-friends-container .g-friends{
   border: 1px solid transparent;
-  padding-top: 55px;
+  margin-top: 50px;
 }
 
 .g-friends-list .g-friends-container .g-friends .g-friend{
@@ -387,4 +387,19 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
 .g-friends-list .g-friends-container .g-friends .g-friend a:hover{
   background-color: #CBCDCE;
   color: #FFFFFF;
+}
+
+/*Scrollbar css..*/
+.g-friends-list .g-friends-container .g-friends::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+.g-friends-list .g-friends-container .g-friends::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 5px;
+}
+ 
+.g-friends-list .g-friends-container .g-friends::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

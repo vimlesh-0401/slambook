@@ -10,13 +10,9 @@ Rails.application.routes.draw do
   resources :messages, only: [:create, :index]
 
   get 'profile', to: 'users#profile'
-  
-  namespace :api do
-    namespace :dynamic do
-      resources :renderers,  only: [:index]
-      #resources :contacts, only: [:create]
-    end
-  end
+  get 'login_status', to: 'home#login_status'
+
+  mount ActionCable.server => '/cable'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

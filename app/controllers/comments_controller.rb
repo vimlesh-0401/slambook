@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :find_comment, only: [:update, :destroy]
+  before_action :find_comment, only: [:update, :destroy]
   
   def index
     query = "comments.post_id=#{params[:post_id]}"
