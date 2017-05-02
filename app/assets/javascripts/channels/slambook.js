@@ -8,6 +8,21 @@ App.slambook = App.cable.subscriptions.create("SlambookChannel", {
   },
 
   received: function(data) {
-    alert('You are already logged in..')
+    $msg = "";
+    var id = $(p).attr('g-friend-id');
+    if(id == one.receiver_id){
+        $msg = $(chat.body.right.join(''));
+    }else{
+        $msg = $(chat.body.left.join(''));
+    }
+    $msg.find('.chat_message')
+        .html('<li><p>'+one.content+'<span class="chat_message_time"></span></p></li>');
+
+    $msg.find('.chat_user_avatar a> img.md-user-image')
+        .attr('src', img);
+    $msg.find('.chat_user_avatar a')
+        .attr('src', 'web.facebook.com/vimlesh.0401');
+    $(p).find('.chat_box.touchscroll.chat_box_colors_a')
+        .append($msg)
   }
 });

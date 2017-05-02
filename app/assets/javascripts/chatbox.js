@@ -136,10 +136,12 @@ chat.footer.push('    </div>');
                 $layout.append($header);
                 $body = $(chat.body.main.join(''));
                 $body.attr('g-load-msg', function(){
+                    $chatbox_body = $(this)
                     $.get('/messages',{receiver_id: $(ele).attr('g-friend-id')}, function(data){
-                        console.log()
+                        _gchatbox.renderAll($chatbox_body, data)
                     })
                 })
+                .attr('g-friend-id', $(ele).attr('g-friend-id'))
                 $footer = $(chat.footer.join(''));
                 $footer.find('.uk-input-group > textarea[g-control="g-ctrl-message"]')
                     .attr('g-friend-id', $(ele).attr('g-friend-id'))
@@ -185,7 +187,6 @@ chat.footer.push('    </div>');
                 });
             },
             render: function(input, data){
-                console.log(data)
                 lasttime = $(input).attr('g-msg-time');
                 current = Date.now();
                 $(input).attr('g-msg-time', current);
@@ -216,6 +217,30 @@ chat.footer.push('    </div>');
                         scrollTop: Math.abs($panel.offset().top) + $panel.height()
                     }, 200);
                 $(input).val('').focus();
+            },
+            renderAll: function(p, comments){
+                for(index = 0; index < comments.length; index++){
+                  comment = comments[index];
+                  _gchatbox.renderOne(p, comment);
+                }
+            },
+            renderOne: function(p, one){
+                $msg = "";
+                var id = $(p).attr('g-friend-id');
+                if(id == one.receiver_id){
+                    $msg = $(chat.body.right.join(''));
+                }else{
+                    $msg = $(chat.body.left.join(''));
+                }
+                $msg.find('.chat_message')
+                    .html('<li><p>'+one.content+'<span class="chat_message_time"></span></p></li>');
+
+                $msg.find('.chat_user_avatar a> img.md-user-image')
+                    .attr('src', img);
+                $msg.find('.chat_user_avatar a')
+                    .attr('src', 'web.facebook.com/vimlesh.0401');
+                $(p).find('.chat_box.touchscroll.chat_box_colors_a')
+                    .append($msg)
             }
         }
 

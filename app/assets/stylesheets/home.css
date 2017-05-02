@@ -94,7 +94,7 @@ section{
 }
 
 .g-panel .panel-body textarea{
-  resize: vertical;
+  resize: none;
   padding-left: 55px;
   border-color: #FFFFFF;
 }

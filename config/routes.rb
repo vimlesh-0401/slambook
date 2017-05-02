@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   root 'home#index'
+  get '/users/sign_in', to: redirect('login')
   devise_for :users
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new'
+  end
   resources :users
   resources :contacts
   resources :comments
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#profile'
   get 'login_status', to: 'home#login_status'
 
-  mount ActionCable.server => '/cable'
+  # mount ActionCable.server => '/cable'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

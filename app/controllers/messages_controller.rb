@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
 
   def index
+    messages = Message.where("(receiver_id=:receiver_id AND sender_id=:sender_id) OR (receiver_id=:sender_id AND sender_id=:receiver_id)", sender_id: current_user.id, receiver_id: params[:receiver_id])
+    #(receiver_id: params[:receiver_id], sender_id: current_user.id)
     respond_to do |format|
-      format.json { render :json => Message.where(receiver_id: params[:receiver_id], sender_id: current_user.id)}
+      format.json { render :json => messages}
     end
   end
 
