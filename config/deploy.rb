@@ -2,7 +2,7 @@
 lock "3.8.2"
 
 set :application, 'postbox'
-set :repo_url, 'git@github.com:vimlesh-0401/friends_contact.git' # Edit this to match your repository
+set :repo_url, 'git@github.com:vimlesh-0401/slambook.git' # Edit this to match your repository
 set :branch, :master
 set :deploy_to, '/home/deploy/postbox'
 set :pty, true
