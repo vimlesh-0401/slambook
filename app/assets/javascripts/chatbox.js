@@ -88,13 +88,14 @@ chat.footer.push('        <div class="uk-input-group">');
 // chat.footer.push('                </span>');
 chat.footer.push('                  <textarea g-access="g-ctrl-chat" g-control="g-ctrl-message" placeholder="Type a message"></textarea>');
 // chat.footer.push('            </div>');
-        
+
 // chat.footer.push('            <span class="uk-input-group-addon">');
 // chat.footer.push('                <a href="javascript:void(0);"><i class="glyphicon glyphicon-send"></i></a>');
 // chat.footer.push('            </span>');
 chat.footer.push('        </div>');
 chat.footer.push('    </div>');
 
+chat.compile = false;
 (function($){
     $.fn.Chatbox = function(){
         var __open_chats = {};
@@ -210,7 +211,7 @@ chat.footer.push('    </div>');
                 }
                 $panel = $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
                     .find('.chat_box_wrapper.chat_box_small.chat_box_active .chat_box.touchscroll.chat_box_colors_a');
-                    
+
                 $(input).closest('.tabbed_sidebar.ng-scope.chat_sidebar.popup-box-on')
                     .find('.chat_box_wrapper.chat_box_small.chat_box_active')
                     .animate({
@@ -245,5 +246,5 @@ chat.footer.push('    </div>');
         }
 
         _gchatbox.init(this);
-    }  
+    }
 }(jQuery))
