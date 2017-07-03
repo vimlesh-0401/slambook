@@ -60,4 +60,6 @@
 #     # password: "please use keys"
 #   }
 
-server '54.190.17.206', user: 'deploy', roles: %w{web app db}
+set :stage, :production
+
+server '13.126.127.123', user: 'deploy', roles: %w{web app db}

@@ -1,3 +1,36 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+form.navbar-form div.search-result{
+  position: absolute;
+  z-index: 2100;
+  background-color: #FFFFFF;
+  width: 450px;
+  border: 1px solid transparent;
+  border-color: #CCCCCC;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  max-height: 200px;
+  overflow-y: scroll;
+}
+form.navbar-form div.search-result ul{
+  padding: 0;
+}
+form.navbar-form div.search-result ul li{
+  list-style-type: none;
+  width: 100%;
+}
+form.navbar-form div.search-result ul li>a{
+  color: inherit;
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  /*border: 1px solid #ccc;*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}

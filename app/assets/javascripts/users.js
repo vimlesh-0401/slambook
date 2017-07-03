@@ -1,6 +1,6 @@
 var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b6bf5aab1d.png";
 (function( $ ) {
-  
+
   $.fn.Friends = function(){
     $this = $(this);
     $friends_cont = $(".g-friends-list .g-friends-container .g-friends");
@@ -55,5 +55,37 @@ var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b
     }
     _gFriends.init();
   }
-  
+
+  $.fn.freeSearch = function(){
+    $search = $(this)
+    var __fs = {
+      init: function(){
+        $search.on('keyup', function(){
+          text = $(this).val();
+          $.get('/users/search',{sSeach: text}, function(data){
+            __fs.render(data);
+          })
+        });
+        $search.on('blur', function(){
+        })
+      },
+      render: function(data){
+        if($search.parent().find('.search-result').length == 0){
+          $search.after('<div class="search-result"> </div>')
+        }
+        arr = [];
+        arr.push('<ul>')
+        for(var index in data){
+          user = data[index];
+          console.log(user)
+          arr.push('<li><a href="users/',user.id,'"><',user.name,'</a></li>');
+        }
+        arr.push('</ul>');
+        $search.parent().find('.search-result').html(arr.join(''));
+        $search.parent().find('.search-result').css('max-height', '')
+      }
+    }
+    __fs.init()
+  }
+
 }( jQuery ));

@@ -45,15 +45,18 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.8', '>= 3.8.2'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-rvm', '~> 0.1.2'
+  gem 'capistrano-passenger'
+end
+
+group :development do
   gem 'web-console', '~> 3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

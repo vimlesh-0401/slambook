@@ -273,7 +273,7 @@ div[g-controls="g2-vk-post-like"] span{
   margin: 0px 5px;
 }
 div[g-controls="g2-vk-post-like"][g-visible="true"]{
- display: block; 
+ display: block;
 }
 
 div[g-controls="g2-vk-post-like"] span[g-content="text"]:hover > i.fa> em{
@@ -324,6 +324,8 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
   background-color: #F5F5F5;
   display: block;
   height: 100%;
+  border-left-style: outset;
+  border-left-width: thin;
 }
 
 .g-friends-list .g-friends-container .g-controls{
@@ -393,13 +395,13 @@ div[g-controls="g2-vk-post-like"] span[g-content="text"] > span:before {
 .g-friends-list .g-friends-container .g-friends::-webkit-scrollbar {
     width: 8px;
 }
- 
+
 .g-friends-list .g-friends-container .g-friends::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 5px;
 }
- 
+
 .g-friends-list .g-friends-container .g-friends::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }

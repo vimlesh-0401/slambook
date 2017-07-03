@@ -13,6 +13,8 @@
     <%= yield %>
   </div>
   <%= render 'layouts/friends_list' %>
-
+  <script type="text/javascript">
+    $("form.navbar-form input.search-anything").freeSearch();
+  </script>
 </body>
 </html>
