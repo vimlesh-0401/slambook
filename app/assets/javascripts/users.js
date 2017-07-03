@@ -73,16 +73,19 @@ var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b
         if($search.parent().find('.search-result').length == 0){
           $search.after('<div class="search-result"> </div>')
         }
-        arr = [];
-        arr.push('<ul>')
+        $ul = $("ul");
+
         for(var index in data){
           user = data[index];
-          console.log(user)
-          arr.push('<li><a href="users/',user.id,'"><',user.name,'</a></li>');
+          arr = [];
+          arr.push('<li><a href="javascript:void(0)" g2-vk-sh=",user.id,">',user.name,'</a></li>');
+          $li= $(arr.join(''));
+          $li.on('click', function(){
+            $(this).parent().parent().html($(this).html());
+          })
+          .appendTo($ul);
         }
-        arr.push('</ul>');
-        $search.parent().find('.search-result').html(arr.join(''));
-        $search.parent().find('.search-result').css('max-height', '')
+        $search.parent().find('.search-result').html("").append($ul);
       }
     }
     __fs.init()
