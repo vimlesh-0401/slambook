@@ -22,4 +22,10 @@ Rails.application.routes.draw do
   resources :messages, only: [:create, :index]
 
   get 'login_status', to: 'home#login_status'
+
+  namespace :api do
+    namespace :dynamic do
+      resources :renderers,  only: [:create]
+    end
+  end
 end

@@ -1,9 +1,9 @@
 module Api
   module Dynamic
     class RenderersController< ApplicationController
-      def index
-        respond_to do |format|   
-          format.js { render :file => "/home/dynamic_content.js.erb",:layout => false  }
+      def create
+        respond_to do |format|
+          format.js { render params,:layout => false  }
         end
       end
     end
