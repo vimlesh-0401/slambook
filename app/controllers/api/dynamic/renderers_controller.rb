@@ -1,11 +1,13 @@
 module Api
   module Dynamic
-    class RenderersController< ApplicationController
+    class RenderersController< ActionController::Base
+
       def create
         respond_to do |format|
-          format.js { render params,:layout => false  }
+          format.json { render json: params, status: 422}
         end
       end
+
     end
   end
 end
