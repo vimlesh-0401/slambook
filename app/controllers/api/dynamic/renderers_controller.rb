@@ -15,9 +15,8 @@ module Api
 
       private
         def call_record_api_params
-          x_params = {}
-          params.map { |x,q| x_params[x.underscore]=q }
-          return x_params.permit(:ucid, :caller_id, :called_no, :call_start_time, :dial_start_time, :dial_end_time, :disconnect_type, :call_status, :recording_url, :call_duration, :call_type, :dialed_number, :department, :call_back_param, :extn)
+          params.map { |x,q| params[x.underscore]=q }
+          params.permit(:ucid, :caller_id, :called_no, :call_start_time, :dial_start_time, :dial_end_time, :disconnect_type, :call_status, :recording_url, :call_duration, :call_type, :dialed_number, :department, :call_back_param, :extn)
         end
     end
   end
