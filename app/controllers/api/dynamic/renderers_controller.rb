@@ -8,6 +8,9 @@ module Api
         end
       end
 
+      def index
+        format.json { render json: params, status: 422}
+      end
     end
   end
 end

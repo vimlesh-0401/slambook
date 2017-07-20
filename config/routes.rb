@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :dynamic do
-      resources :renderers,  only: [:create]
+      resources :renderers,  only: [:create, :index]
     end
   end
 end
