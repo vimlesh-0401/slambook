@@ -9,7 +9,7 @@ module Api
       end
 
       def index
-        format.json { render json: params, status: 422}
+        redirect_to login_path();
       end
     end
   end
