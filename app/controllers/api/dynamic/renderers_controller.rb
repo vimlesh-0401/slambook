@@ -18,7 +18,8 @@ module Api
           params.permit(:UCID, :CallerID, :CalledNo, :CallStartTime, :DialStartTime, :DialEndTime, :DisconnectType, :CallStatus, :RecordingURL, :CallDuration, :CallType, :DialedNumber, :Department, :CallBackParam, :Extn)
           params_x = {}
           params.map { |x,q| params_x[x.underscore]=q }
-          params_x
+          #{:ucid, :caller_id, :called_no, :call_start_time, :dial_start_time, :dial_end_time, :disconnect_type, :call_status, :recording_url, :call_duration, :call_type, :dialed_number, :department, :call_back_param, :extn}
+          params_x.slice(:ucid, :caller_id, :called_no, :call_start_time, :dial_start_time, :dial_end_time, :disconnect_type, :call_status, :recording_url, :call_duration, :call_type, :dialed_number, :department, :call_back_param, :extn)
         end
     end
   end
