@@ -1,0 +1,60 @@
+<style type="text/css">
+  table.table > thead>tr>th>p, table.table > tbody>tr>td>p{
+    display: block;
+    font-size: 10px;
+    font-color: #C9C9C9;
+  }
+
+  table.table thead tr[g2-ct='header']{
+    background-color: dimgray;
+  }
+  table.table tbody tr{
+    background-color: #c3c3c3;
+  }
+  table.table tbody tr>td{
+    vertical-align: middle;
+  }
+  table.table tfoot tr td:first-child{
+    text-align: left;
+  }
+  table.table tfoot tr td:last-child{
+    text-align: right;
+  }
+</style>
+<section id="public-post-section">
+  <div class="row">
+    <div class="col-xs-12 col-md-12" id="bonito-clients-panel">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>CallerID<p>#</p></th>
+                    <th>CalledNo<p>Extn</p></th>
+                    <th>CallStartTime<p>#</p></th>
+                    <th>DialStartTime<p>DialEndTime</p></th>
+                    <th>DisconnectType<p>CallStatus</p></th>
+                    <th><i class="fa fa-phone"></i><p>#</p></th>
+                    <th>CallDuration<p>CallType</p></th>
+                    <th>DialedNumber<p>Department</p></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  setTimeout(function(){
+    $("#bonito-clients-panel").clients();
+  }, 1000)
+
+</script>

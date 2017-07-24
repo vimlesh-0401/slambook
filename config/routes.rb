@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'clients/index'
+
   root 'home#index'
   get '/users/sign_in', to: redirect('login')
 
@@ -20,7 +22,11 @@ Rails.application.routes.draw do
   resources :likes
   resources :posts
   resources :messages, only: [:create, :index]
-
+  resources :clients, only: [:index] do
+    collection do
+      get :clients
+    end
+  end
   get 'login_status', to: 'home#login_status'
 
   namespace :api do

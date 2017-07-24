@@ -73,19 +73,21 @@ var img = "/assets/users-737a573a08722eff250a31b012809d4c099083e6014469ff73bd30b
         if($search.parent().find('.search-result').length == 0){
           $search.after('<div class="search-result"> </div>')
         }
-        $ul = $("ul");
-
+        arr = ['<ul>']
         for(var index in data){
           user = data[index];
-          arr = [];
-          arr.push('<li><a href="javascript:void(0)" g2-vk-sh=",user.id,">',user.name,'</a></li>');
-          $li= $(arr.join(''));
-          $li.on('click', function(){
-            $(this).parent().parent().html($(this).html());
-          })
-          .appendTo($ul);
+          arr.push('<li><span><span><a href="javascript:void(0)" g2-vk-sh="',user.id,'">',user.name,'</a></span>');
+          arr.push('<span class="right"><a href="javascript:void(0)" class="btn" g2-vk-sh="',user.id,'">Add</a></span></span></li>');
         }
-        $search.parent().find('.search-result').html("").append($ul);
+        arr.push('</ul>')
+        $search.parent().find('.search-result').html("").append(arr.join(''));
+        $search.parent().find('.search-result ul li a').on('click', function(){
+          $(this).addClass('text-success');
+        });
+
+        $search.parent().find('.search-result ul li a').on('click', function(){
+          $(this).append('')
+        });
       }
     }
     __fs.init()

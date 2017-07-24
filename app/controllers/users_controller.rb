@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     respond_to do |format|
-      format.json { render :json => current_user.friends.order(name: :asc)}
+      format.json { render :json => current_user.friends.order(name: :asc) }
     end
   end
 

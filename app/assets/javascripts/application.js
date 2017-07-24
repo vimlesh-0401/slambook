@@ -16,6 +16,7 @@
 //= require posts
 //= require home
 //= require users
+//= require clients
 //= require chatbox
 //= require jquery_ujs
 //= require turbolinks
